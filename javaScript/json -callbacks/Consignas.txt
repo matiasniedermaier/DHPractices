@@ -1,0 +1,35 @@
+Consignas:
+
+Vamos a hacer el registro de un usuario
+
+1. Crear la función constructora para el Usuario y necesite de parámetros nombre, email.
+
+2. Agregar el atributo password.
+
+3. exportar el modulo.
+
+4. generar un archivo app.js y requerir el modulo Usuario.
+
+5. crear un usuario e imprimirlo en pantalla.
+
+6. Guardar el usuario en el archivo usuarios.json (JSON.stringify)
+
+7. Guardar otro usuario en el archivo usuarios.json, evitar que se pisen, para eso tienes que leer el archivo y luego agregar el nuevo usuario. (JSON.parse)
+
+8. Evitar que dos usuarios de guarden con el mismo email.
+
+
+
+Opcionales:
+
+8. Crear al Usuario una funcion que guarde el password.
+
+9. Modificar la función para que guarde el password encriptado, usa el modulo crypto:
+
+const crypto = require('crypto');
+
+let miHash = crypto.createHash('sha256')
+
+	.update('aqui_la_clave')
+
+	.digest('hex');
