@@ -235,6 +235,8 @@ http.createServer((req, res) => {
 			res.write('\n\nRecordá que podés visitar las secciones:\n\n');
 			res.write('En Cartelera\n', 'Más Votadas\n', 'Sucursales\n', 'Contacto\n', 'Preguntas Frecuentes\n');
 
+			res.end();
+
 			break;
 		// En cartelera
 		case '/en-cartelera':
@@ -265,6 +267,8 @@ http.createServer((req, res) => {
 				})
 			});
 			
+			res.end();
+
 			break;
 		// Más votadas
 		case '/mas-votadas':
@@ -304,6 +308,8 @@ http.createServer((req, res) => {
 				num++;
 			})
 
+			res.end();
+
 			break;
 		//  Sucursales
 		case '/sucursales':
@@ -323,6 +329,8 @@ http.createServer((req, res) => {
 				res.write(name + '\n' + address + '\n' + description + '\n\n');
 			});
 
+			res.end();
+
 			break;
 		//  Contacto
 		case '/contacto':
@@ -332,6 +340,8 @@ http.createServer((req, res) => {
 
 			// Contenido
 			res.write('¿Tenés algo para contarnos? Nos encanta escuchar a nuestros clientes. Si deseas contactarnos podés escribirnos al siguiente email: dhmovies@digitalhouse.com o en las redes sociales. Envianos tu consulta, sugerencia o reclamo y será respondido a la brevedad posible. Recordá que también podes consultar la sección de Preguntas Frecuentes para obtener respuestas inmediatas a los problemas más comunes.');
+
+			res.end();
 
 			break;
 		// Preguntas Frecuentes
@@ -352,6 +362,8 @@ http.createServer((req, res) => {
 				answer = questions.faq_answer;
 				res.write(question + '\n' + answer + '\n\n');
 			});
+
+			res.end();
 
 			break;
 		// Default
