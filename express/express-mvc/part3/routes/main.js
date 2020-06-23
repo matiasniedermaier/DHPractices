@@ -8,6 +8,6 @@ const main = require('../controllers/mainController');
 router.get('/', main.main);
 
 // Ruta Créditos
-router.get('/creditos', main.creditos);
+router.get('/creditos', main.credits);
 
 module.exports = router;
