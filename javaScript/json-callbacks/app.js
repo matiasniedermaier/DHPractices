@@ -1,60 +1,55 @@
-const Usuario = require('./user');
+const User = require('./User');
 const fs = require('fs');
 const crypto = require('crypto');
-
-let users = [];
 let usersJson = fs.readFileSync('./users.json');
-let user1 = new Usuario('Matias', 'matinieder@gmail.com');
-let user2 = new Usuario('Tomas', 'tomasniedermaier@gmail.com');
-let user3 = new Usuario('Juanma', 'jcolomboblanco@gmail.com');
+let users = [];
+let i = 0;
+let emailMatches = false;
 
-// Function to encrypt password
-function Password (password) {
-
+function password (x) {
     let miHash = crypto.createHash('sha256')
 
-	.update(password)
+	.update(x)
 
-    .digest('hex'); 
+    .digest('hex');
     
     return miHash;
-
 }
-// If json is empty
-if (usersJson.length == 0) {
 
-    users.push(user3);
-    usersJson = JSON.stringify(users);
-    fs.writeFileSync('users.json', usersJson);
 
-// If JSON is not empty
-} else {
+/* <-- I create a new user without overwriting */
+let user = new User ('Tomas', 'tomas@gmail.com');
+
+if ( usersJson.length > 0 ) {
 
     users = JSON.parse(usersJson);
-    let i = 0;
-    let emailMatches = 0;
+    /* <-- I search if the email exists in the registered users --> */
+    while ( users.length > i && !emailMatches ) {
 
-    // If the email is already registered
-    while (users.length > i && emailMatches!=1) {
+        if ( user.email == users[i].email ) {
 
-        if (user3.email == users[i].email) {
+            emailMatches = true;
 
-            console.log("this email already exists");
-            emailMatches = 1;
         }
 
         i++;
-
     }
-   
-    // It is passed to JSON and the data is saved
-    if (emailMatches == 0) {
+    if ( emailMatches == false ) {
 
-        user3.password = Password('12345');        
-        users.push(user3);
+        user.password = password('12345')
+        users.push(user);
         usersJson = JSON.stringify(users);
         fs.writeFileSync('users.json', usersJson);
 
-    }    
+    } else {
+
+        console.log('This email already exists')
+        
+    }
+
+} else {
+
+    usersJson = JSON.stringify(user);
+    fs.writeFileSync('users.json', usersJson);
 
 }

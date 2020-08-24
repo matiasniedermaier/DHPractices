@@ -3,36 +3,22 @@ const fs = require('fs');
 let archivoTareas = {
     archivo: 'tareas.json',
     leerJSON: function () {
-        return JSON.parse(fs.readFileSync(this.archivo, 'utf-8'));
+        return JSON.parse(fs.readFileSync( this.archivo ));
     },
-
-    escribirJSON: function (tareas) {
-
-        let tareasJSON = JSON.stringify(tareas);
-        fs.writeFileSync( 'tareas.json', tareasJSON );
-
+    escribirJSON: function (x) {
+        return fs.writeFileSync( this.archivo, JSON.stringify(x));
     },
-
-    guardarTarea: function (tarea) {
-
+    guardarTarea: function (x) {
         let tareas = this.leerJSON();
-        tareas.push(tarea);
-        this.escribirJSON(tareas);
-
+        tareas.push(x);
+        return this.escribirJSON(tareas);
     },
-
-    leerPorEstado: function (estado) {
-
+    filtrarPorEstado: function (x) {
         let tareas = this.leerJSON();
-        let tareasfiltradas = tareas.filter( function ( tarea ) {
-
-            return tarea.estado == estado;
-
-        });
-        return tareasfiltradas;
-
+        return tareas.filter( tarea => {
+            return x == tarea.estado;
+        })
     }
-
 }
 
 module.exports = archivoTareas;

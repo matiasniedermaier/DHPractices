@@ -1,1 +1,17 @@
-[{"name":"Matias","email":"matinieder@gmail.com"},{"name":"Tomas","email":"tomasniedermaier@gmail.com"},{"name":"Juanma","email":"jcolomboblanco@gmail.com","password":"5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5"}]
+[
+    {
+        "name":"Matias",
+        "email":"matias@gmail.com",
+        "password":""
+    },
+    {
+        "name":"Brenda",
+        "email":"brenda@gmail.com",
+        "password":""
+    },
+    {
+        "name":"Tomas",
+        "email":"tomas@gmail.com",
+        "password":"5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5"
+    }
+]
