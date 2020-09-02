@@ -3,6 +3,7 @@ const faqs = require('./data/faqs.json');
 const theaters = require('./data/theaters.json');
 
 let CustomFunctions = {
+    // Ordeno las películas alfabeticamente
     moviesList: () => {
         let moviesList = movies.movies;
         moviesList = moviesList.map( movie => {
@@ -10,17 +11,16 @@ let CustomFunctions = {
         });
         return moviesList = moviesList.sort();
     },
+    // Películas con rating mayor igual a 7
     mostAverage: () => {
         let mostAverage = movies.movies;
         return mostAverage = mostAverage.filter( movie => {
             return movie.vote_average >= 7;
         });
     },
+    // Promedio de rating de las películas con rating mayor igual a 7
     average: () => {
-        let mostAverage = movies.movies;
-        mostAverage = mostAverage.filter( movie => {
-            return movie.vote_average >= 7;
-        });
+        let mostAverage = this.mostAverage();
         let average = mostAverage.map( movie => {
             return movie.vote_average
         });
