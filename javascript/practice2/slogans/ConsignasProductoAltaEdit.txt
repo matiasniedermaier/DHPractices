@@ -1,0 +1,13 @@
+ Practica:
+ 1) Realizar el alta de un producto (archivo altaProducto.js):
+	1.1 Crear la funcion constructora que reciba de parametros:
+		nombre, codigo, precio y stock.
+	1.2 Instanciar el producto.
+	1.3 Guardar en el json como array los productos.
+	1.4 Los productos son unicos por codigo.
+	 así que dos productos no pueden guardarse con el mismo codigo.
+
+  2) Ahora debemos editar un producto (archivo editarProducto.js):
+	2.1 Buscar en el json al producto por codigo.
+	2.2 Editaremos el nombre, el precio y el stock.
+	2.3 Guardar el producto editado.

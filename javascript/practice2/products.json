@@ -1,0 +1,14 @@
+[
+ {
+  "name": "Shoes Nike",
+  "code": 157894,
+  "price": 200,
+  "stock": 15
+ },
+ {
+  "name": "Cap Tommy Hilfiger",
+  "code": 157115,
+  "price": 80,
+  "stock": 50
+ }
+]
