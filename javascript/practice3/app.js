@@ -17,7 +17,7 @@ switch(accion) {
     // EJ: node app.js crear Terminar la vista del home
     case 'crear':
         if (process.argv[3] == undefined) {
-            console.log('Debes escribir una tarea')
+            console.log('Debes escribir una tarea');
         } else {
             let tarea = {
                 titulo: process.argv[3],
@@ -29,16 +29,19 @@ switch(accion) {
     // Filtro la tarea que quiero buscar
     case 'filtrar':
         let estado = process.argv[3];
+        // Si escribe un estado valido
         if ( estado == 'terminada' || estado == 'en progreso' || estado == 'pendiente') {
             console.log('Estas son las tareas filtradas:')
             let tareasFiltradas = archivoTareas.filtrarPorEstado(estado);
             tareasFiltradas.forEach( ( tarea, x ) => {
                 console.log(x+1 + '. ' + tarea.titulo + ' - ' + tarea.estado);        
             });
+        // Si no escribe ningun estado
         } else if ( estado == undefined ){
-            console.log('Debes escribir un estado para filtrar')
+            console.log('Debes escribir un estado para filtrar');
+        // Si escribe un estado no valido
         } else {
-            console.log('No es un estado válido, prueba otro')
+            console.log('No es un estado válido, prueba otro');
         }
         break;
     // En caso de que no escriba una acción
