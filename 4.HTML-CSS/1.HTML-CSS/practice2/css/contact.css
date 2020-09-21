@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+/* Header */
+#header {
+    height: 25vh;
+    box-sizing: border-box;
+    text-align: right;
+    padding-top: 40px;
+    margin: 0 5px 40px 0;
+    font-size: 20px;
+}
+.header-nav {
+    background-color: rgba(255, 255, 255, 0.500);
+    line-height: 55px;
+    margin-bottom: 15px;
+}
+.header-nav a {
+    font-weight: bolder;
+}
+.header-icons i {
+    color: black;
+}
+/* Main */
+.container {
+    margin: 0 7px 0 7px;
+}
+.title {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 78px;
+}
+.subtitle {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    margin: 60px 0 20px 0;
+}
+.contact-title {
+    color: rgb(0, 135, 113);
+    margin: 20px 0 20px 0;
+}
+span {
+    color: rgb(134, 129, 135);
+}
