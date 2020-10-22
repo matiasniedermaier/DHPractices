@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santa María - Contacto</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <main>
+        <form class="form" action="POST">
+            <div class="input">
+                <b><label class="form-title" for="country">¿De dónde sos?</label></b>
+                <select name="country" id="country">
+                    <option value="">Seleccioná una opción</option>
+                    <option value="Ar">Argentina</option>
+                    <option value="Br">Brasil</option>
+                    <option value="Ch">Chile</option>
+                    <option value="Co">Colombia</option>
+                    <option value="Ur">Uruguay</option>
+                </select>
+            </div>
+            <div class="input">
+                <b><label class="form-title">¿Qué te pareció la iluminación del ambiente?</label></b>
+                <input type="checkbox" id="ilumination1" name="ilumination" value="Muy acorde">
+                <label for="ilumination1">Muy acorde</label><br>
+                <input type="checkbox" id="ilumination2" name="ilumination" value="buena-pero-podría-mejorar">
+                <label for="ilumination2">Buena, pero podría mejorar</label><br>
+                <input type="checkbox" id="ilumination3" name="ilumination" value="Mala">
+                <label for="ilumination3">Mala</label>
+            </div>
+            <div class="input">
+                <b><label class="form-title">¿Qué tipo de plato fue el que más te gustó?</label></b>
+                <input type="checkbox" id="starters" name="food" value="entrada">
+                <label for="starters">Entrada</label><br>
+                <input type="checkbox" id="mains" name="food" value="plato-principal">
+                <label for="mains">Plato Principal</label><br>
+                <input type="checkbox" id="desserts" name="food" value="postre">
+                <label for="desserts">Postre</label><br>
+                <input type="checkbox" id="other" name="food" value="otro">
+                <label for="other">Otro</label>
+            </div>
+            <div class="input">
+                <b><label class="form-title">¿Recomendarías el lugar?</label></b>
+                <input type="radio" id="recommend1" name="recommend">
+                <label for="recommend1">Sí</label>
+                <input type="radio" id="recommend2" name="recommend">
+                <label for="recommend2">No</label>
+            </div>
+            <div class="input">
+                <b><label class="form-title for="textarea">¿Por que?</label></b><br>
+                <textarea name="textarea" id="textarea" cols="50" rows="7"></textarea>
+            </div>
+            <div class="input">
+                <b><label class="form-title">Dejanos tus datos y nos pondremos en contacto con vos</label></b>
+                <label class="form-name" for="name">Nombre:</label>
+                <input class="form-names" type="text" id="name" name="name" placeholder="tu nombre"><br>
+                <label class="form-name" for="email">Email:</label>
+                <input class="form-names" type="text" id="email" name="email" placeholder="tu email">
+            </div>
+            <div class="input">
+                <button class="button1" type="submit">Enviar</button>
+                <button class="button2" type="reset">Resetear</button>
+            </div>
+            <b><a class="go-home" href="./index.html">Volver a la Carta</a></b>
+        </form> 
+    </main>
+</body>
+</html>

@@ -1,0 +1,127 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #565656;
+    text-decoration: none;
+}
+.container {
+    margin: 20px auto;
+    width: 960px;
+}
+#header {
+    border-bottom: 1px solid #565656;
+    margin-left: 50px;
+    padding-top: 15px;
+    padding-bottom: 20px;
+}
+#header h1 {
+    padding-bottom: 30px;
+}
+#main {
+    overflow: hidden;
+    margin-left: 50px;
+    margin-top: 40px;
+}
+.nav {
+    float: left;
+    width: 300px;
+    padding-top: 15px;
+}
+.nav li {
+    padding-bottom: 20px;
+}
+.foods {
+    float: right;
+    width: 610px;
+    padding: 15px 0 0 30px;
+    border-left: 1px solid #565656;
+}
+.food #starters {
+    margin-bottom: 40px;
+}
+.food #mains {
+    margin-bottom: 40px;
+}
+.food #desserts {
+    margin-bottom: 40px;
+}
+.food {
+    margin: 20px;
+}
+.food p {
+    margin-top: 5px;
+}
+.image {
+    float: right;
+    border: solid 1px #f3eae0;
+    border-radius: 5px;
+}
+.go-top {
+    display: block;
+    margin-bottom: 30px;
+}
+#footer {
+    margin-top: 40px;
+    padding: 0 20px;
+    border-top: 1px solid #565656;
+    background-color: #d8d8d8;
+    display: grid;
+    grid-template-columns: 300px 610px;
+}
+.logo img{
+    width: 100%;
+    margin: 15px 0 15px 20px;
+}
+.contacts {
+    text-align: right;
+    margin: 20px;
+}
+.contacts li {
+    padding: 10px;
+}
+.contacts a {
+    color: white;
+}
+/* Contact */
+.form {
+    width: 50%;
+    margin: 0 auto;
+    border: 1px solid #e0a700;
+}
+.form-title {
+    display: block;
+    margin: 15px;
+}
+.input input, select, textarea {
+    margin-left: 15px;
+}
+.form-name {
+    margin-left: 15px;
+}
+.form-names {
+    margin: 0 0 10px 0;
+}
+.button1 {
+    width: 30%;
+    margin: 20px 15px;
+    background-color: #e0a700;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    height: 30px;
+}
+.button2 {
+    width: 30%;
+    margin: 20px 15px;
+    background-color: white;
+    color:#e0a700;
+    border: 1px solid #e0a700;
+    border-radius: 5px;
+    height: 30px;
+}
+.go-home {
+    margin: 10px;
+    float: right;
+}
