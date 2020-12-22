@@ -1,0 +1,54 @@
+<head>
+
+    <%- include('./partials/head') %>
+
+    <link rel="stylesheet" href="/css/detail.css">
+</head>
+
+<body>
+    
+    <%- include('./partials/header') %>
+    
+    <main class="container">
+        <h2>Detalle del producto: <%= product.name %></h2>
+        <div class="product">
+            <div class="row">
+                <div class="col-12 col-lg-8">
+                    <div>
+                        <div class="product-img">
+                            <img src="/images/products/<%= product.image %>" alt="<%= product.name %> picture">
+                        </div>
+                        <p class="product-description"><%= product.description %></p>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 product-dataPayment">
+                    <div>
+                        <h1><%= product.name %></h1>
+                        <div class="product-price">
+                            <% if (product.discount > 0) {%>
+                                <div class="price-offert">
+                                    <p class="product-offer">$<%= product.price %></p>
+                                    <p class="product-offer"> / <%= product.discount %>% OFF</p>
+                                </div>
+                                <p class="product-money">$<%= (product.price*(100-product.discount))/100 %></p>
+                            <% } else {%>
+                                <p class="product-money">$<%= product.price %> </p>
+                            <% } %> 
+                        </div>
+                        <div class="payment">
+                            <p class="payment-method"><i class="fas fa-credit-card"></i> Pagá en 12 coutas sin interes</p>
+                            <p class="payment-method"><i class="fas fa-store"></i> Retiro gratis en locales del vendedor</p>
+                        </div>
+                        <button type="button" class="product-button-buy">COMPRAR AHORA</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script type="text/javascript" src="/js/customFunctions.js"></script>
+
+
+    <%- include('./partials/footer') %> 
+
+</body>

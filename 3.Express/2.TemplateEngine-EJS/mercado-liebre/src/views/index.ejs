@@ -1,0 +1,80 @@
+<head>
+
+	<%- include('./partials/head') %> 
+
+	<link rel="stylesheet" href="/css/index.css">
+</head>
+
+<body>
+	
+	<%- include('./partials/header') %> 
+
+	<h1 class="title">Mercado Liebre</h1>
+	<!-- Banner -->
+	<div class="banner">
+		<img src="./images/img-home-banner.jpg" alt="Banner photo">
+	</div>
+	<!-- Products -->
+	<main class="container">
+		<h2>Basado en tu última visita</h2>
+		<div class="products row">
+			<% for( let product of products ) { %>
+				<% if (product.category == 'visited') { %> 
+					<div class="col-md-6 col-lg-3">
+						<a href="/product/detail/<%= product.id %>/<%= product.category %>">
+							<div class="product">
+								<div class="product-img">
+									<img src="/images/products/<%= product.image %>" alt="product <%= product.name %>">
+								</div>
+								<div class="product-icon-truck">
+									<i class="fas fa-truck"></i>
+								</div>
+								<div class="product-price">
+									<% if (product.discount > 0) { %>
+										<p class="product-money">$<%= (product.price*(100-product.discount))/100 %></p>
+										<p class="product-offer"><%= product.discount %>% OFF</p>
+									<% } else { %>
+										<p class="product-money">$<%= product.price %> </p>
+									<% } %>  
+								</div>
+							</div>
+						</a>
+					</div>
+				<% } %> 
+			<% } %>
+		</div>
+		<h2>Ofertas</h2>
+		<div class="products row">
+			<% for( let product of products ) { %>
+				<% if (product.category == 'in-sale') { %>
+					<div class="col-md-6 col-lg-3">
+						<a href="/product/detail/<%= product.id %>/<%= product.category %>">
+							<div class="product">
+							<div class="product-img">
+								<img src="/images/products/<%= product.image %>" alt="product <%= product.name %>">
+							</div>
+							<div class="product-icon-truck">
+								<i class="fas fa-truck"></i>
+							</div>
+							<div class="product-price">
+								<% if (product.discount > 0) { %>
+									<p class="product-money">$<%= (product.price*(100-product.discount))/100 %></p>
+									<p class="product-offer"><%= product.discount %>% OFF</p>
+								<% } else { %>
+									<p class="product-money">$<%= product.price %> </p>
+								<% } %>
+							</div>
+							</div>
+						</a>
+					</div>
+				<% } %> 
+			<% } %>				
+		</div>
+	</main>
+
+	<script type="text/javascript" src="/js/customFunctions.js"></script>
+	
+	<%- include('./partials/footer') %> 
+
+</body>
+</html>
