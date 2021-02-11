@@ -1,0 +1,52 @@
+/* MOBILE FIST */
+
+/* Form */
+.form {
+    margin-top: 30px;
+}
+.form h1 {
+    margin: 10px 0;
+    font-size: 25px;
+    color: #666666;
+}
+.form-input input, textarea {
+    margin-top: 10px;
+    width: 100%;
+}
+.form-input textarea {
+    resize: none;
+    padding: 10px;
+}
+.form-button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px 0;
+    background-color: #1259c3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+/* TABLET STYLE */
+
+@media(min-width: 768px) {
+
+    /* Form */
+    .form h1, form {
+        width: 70%;
+        margin: auto;
+    }
+
+}
+
+/* DESKTOP STYLE */
+
+@media(min-width: 1024px) {
+
+    /* Form */
+    .form h1, form {
+        width: 50%;
+        margin: auto;
+    }
+
+}
