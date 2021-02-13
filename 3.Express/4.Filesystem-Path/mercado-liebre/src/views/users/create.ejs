@@ -1,0 +1,47 @@
+<head>
+    
+    <%- include('./../partials/head') %>
+
+    <link rel="stylesheet" href="/css/create.css">
+    
+</head>
+
+<body>
+    
+    <%- include('./../partials/header') %>
+    
+    <main class="container">
+        <div class="row">
+            <div class="col">
+                <div class="form">
+                    <h1>Registro:</h1>
+                    <form action="/users/register" method="POST" enctype="multipart/form-data" class="form-input">
+                        <p>
+                            <input type="text" name="firstName" placeholder="Nombre">
+                        </p>
+                        <p>
+                            <input type="text" name="lastName" placeholder="Apellido">
+                        </p>
+                        <p>
+                            <input type="email" name="email" placeholder="Email">
+                        </p>
+                        <p>
+                            <input type="password" name="password" placeholder="Contraseña">
+                        </p>
+                        <p>
+                            <input type="password" name="confirmPassword" placeholder="Repetir Contraseña">
+                        </p>
+                        <p class="form-file">
+                            <label for="avatar">Elije una foto de perfil</label>
+                            <input type="file" name="avatar">
+                        </p>
+                        <button type="submit" class="form-button">GUARDAR</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <%- include('./../partials/footer') %> 
+
+</body>

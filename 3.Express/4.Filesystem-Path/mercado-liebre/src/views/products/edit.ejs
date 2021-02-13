@@ -1,0 +1,65 @@
+<head>
+    <title><%= product.name %></title>
+    <link rel="stylesheet" href="/css/detail.css">
+    <link rel="stylesheet" href="/css/edit.css">
+
+    <%- include('./../partials/head') %>
+    
+</head>
+
+<body>
+    
+    <%- include('./../partials/header') %>
+    
+    <main class="container">
+        <h2>Detalle del producto: <%= product.name %></h2>
+        <div class="product">
+            <form action="/products/edit/<%= product.id %>?_method=PUT" method="POST">
+                <div class="row">
+                    <div class="col-12 col-lg-8">
+                        <div>
+                            <div class="product-img">
+                                <img src="/images/products/<%= product.image %>" alt="<%= product.name %> picture">
+                            </div>
+                            <p class="product-description">
+                                <label for="description">Descripción:</label><br>
+                                <textarea name="description" cols="50" rows="7" placeholder="Descripción del producto">
+                                    <%= product.description %>
+                                </textarea>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4 product-dataPayment">
+                        <div>
+                            <p class="form">
+                                <label for="name">Nombre:</label>
+                                <input type="text" name="name" value="<%= product.name %>" placeholder="Nombre">
+                            </p>
+                            <div class="product-price">
+                                <p class="form">
+                                    <label for="price">Precio:</label>
+                                    <input type="number" name="price" value="<%= product.price %>" placeholder="Precio">
+                                </p>
+                                <p class="form">
+                                    <label for="discount">Descuento:</label>
+                                    <input type="number" name="discount" value="<%= product.discount %>" placeholder="Descuento">
+                                </p>
+                            </div>
+                            <div class="payment">
+                                <p class="payment-method"><i class="fas fa-credit-card"></i> Pagá en 12 coutas sin interes</p>
+                                <p class="payment-method"><i class="fas fa-store"></i> Retiro gratis en locales del vendedor</p>
+                            </div>
+                            <button type="submit" class="product-button-buy">GUARDAR EDICIÓN</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script type="text/javascript" src="/js/customFunctions.js"></script>
+
+
+    <%- include('./../partials/footer') %> 
+
+</body>

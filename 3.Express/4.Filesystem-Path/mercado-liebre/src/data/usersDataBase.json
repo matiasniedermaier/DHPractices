@@ -1,0 +1,16 @@
+[
+ {
+  "firstName": "Matias",
+  "lastName": "Niedermaier",
+  "email": "matiasnieder@gmail.com",
+  "password": "123456",
+  "avatar": "avatar-1613172299419.jpg"
+ },
+ {
+  "firstName": "Juan",
+  "lastName": "Domingo",
+  "email": "peron@gmail.com",
+  "password": "$2b$10$FQQEfL4n4Uj68eC5R1wUvOolLGZ/MysEpJiLpXCRACZpKxB2XrQ3i",
+  "avatar": "avatar-1613222137654.jpg"
+ }
+]

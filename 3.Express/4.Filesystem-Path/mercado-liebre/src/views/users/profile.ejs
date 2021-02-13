@@ -1,0 +1,37 @@
+<head>
+    
+    <%- include('./../partials/head') %>
+
+    <link rel="stylesheet" href="/css/profile.css">
+    
+</head>
+
+<body>
+    
+    <%- include('./../partials/header') %>
+    
+    <main class="container">
+        <div class="row">
+            <div class="col">
+                <div class="profile">
+                    <h1>Perfil de <%= user.firstName %> </h1>
+                    <div class="profile-avatar">
+                        <img src="/images/users/<%= user.avatar %> " alt="">
+                    </div>
+                    <div class="profile-firstName">
+                        <p>Nombre: <%= user.firstName %> </p>
+                    </div>
+                    <div class="profile-lastName">
+                        <p>Apellido: <%= user.lastName %> </p>
+                    </div>
+                    <div class="profile-email">
+                        <p>Email: <%= user.email %> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <%- include('./../partials/footer') %> 
+
+</body>
