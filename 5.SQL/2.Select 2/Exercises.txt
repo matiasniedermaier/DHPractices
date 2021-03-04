@@ -1,0 +1,107 @@
+Desafío 1
+
+
+1. Traer todos los actores de la tabla actores
+   SELECT id, last_name FROM actors;
+
+2. Traer todos los títulos y sus premios de la tabla movies
+   SELECT title, awards FROM movies;
+
+3. Obtener la película Titanic por medio del nombre
+   SELECT * FROM movies
+   WHERE title LIKE '%Titanic%';
+
+4. Obtener la serie "Person of interest" por medio de su id
+   SELECT * FROM series
+   WHERE id = 4;
+
+5. Obtener los episodios número 2 de todas las series
+   SELECT * FROM episodes
+   WHERE number = 2;
+
+
+
+Desafío 2
+
+
+1. Obtener todas las películas que su fecha de estreno sea mayor a octubre de 1999 y menor a diciembre del 2004.
+   SELECT * FROM movies
+   WHERE release_date BETWEEN '199910' AND '200412';
+
+2. Obtener todas las películas que terminan con la letra "a"
+   SELECT * FROM movies
+   WHERE title LIKE '%a';
+
+3. Obtener el total de los actores que se llamen Jim
+   SELECT * FROM actors
+   WHERE first_name LIKE '%Jim%';
+
+4. Obtener la suma de los premios que ganaron todas las películas 'La Guerra De Las Galaxias'
+   SELECT SUM(awards) FROM movies
+   WHERE title LIKE '%La Guerra de las galaxias%';
+
+5. Obtener el nombre de la película favorita de Leonardo Di Caprio
+   SELECT title FROM movies
+   INNER JOIN actors ON actors.favorite_movie_id = movies.id
+   WHERE first_name LIKE '%Leonardo%' AND last_name LIKE '%Di Caprio%';
+
+
+
+Desafío 3
+
+
+1. Obtener las películas favoritas de los actores que tengan 2.3 de rating, ordenado por el id de actors
+   SELECT title FROM movies
+   INNER JOIN actors ON actors.favorite_movie_id = movies.id
+   WHERE actors.rating = 2.3 ORDER BY actors.id ASC;
+
+2. Obtener todas las series con sus géneros
+   SELECT series.title, genres.name FROM series
+   INNER JOIN genres ON series.genre_id = genres.id;
+
+3. Obtener todas las películas de Animación
+   SELECT movies.title, genres.name FROM movies
+   INNER JOIN genres ON genres.name = 'Animacion';
+
+4. Obtener todos los actores que trabajaron en Parque Jurásico
+   SELECT first_name, last_name, actor_movie.id FROM actors
+   INNER JOIN actor_movie ON actors.id = actor_movie.actor_id
+   WHERE actor_movie.movie_id = 5;
+
+5.  Obtener los títulos de las películas y el nombre del género de aquellas que están ranqueadas entre 1 y 4
+   SELECT movies.title, movies.rating, genres.name FROM movies
+   INNER JOIN genres ON movies.genre_id = genres.id
+   WHERE movies.rating BETWEEN 1 AND 4;
+
+
+
+Desafío 4
+
+
+1. Obtener el nombre género y el promedio de duración de todas las películas
+agrupadas por el mismo
+   SELECT genres.name, AVG(movies.length) FROM genres
+   INNER JOIN movies ON genres.id = movies.genre_id
+   GROUP BY genres.name;	
+
+2. Obtener todos los actores junto con la cuenta de las películas en las que actuaron
+   SELECT actors.last_name, COUNT(actor_movie.movie_id) FROM actors
+   INNER JOIN actor_movie ON actors.id = actor_movie.actor_id
+   GROUP BY actors.last_name;
+
+3. Obtener la cuenta de películas agrupadas por su género
+   SELECT genres.name, COUNT(movies.id) FROM genres
+   INNER JOIN movies ON genres.id = movies.genre_id
+   GROUP by genres.name;
+
+4. Obtener el nombre de los géneros que tengan más de 3 películas agrupadas por
+el género
+   SELECT genres.name, COUNT(movies.id) FROM genres
+   INNER JOIN movies ON genres.id = movies.genre_id
+   GROUP by genres.name HAVING COUNT(movies.id) > 3;
+
+5. Obtener los géneros que tengan películas con rating promedio mayor a 3
+agrupados por su género
+   SELECT genres.name FROM genres
+   INNER JOIN movies ON genres.id = movies.genre_id
+   GROUP by genres.name HAVING AVG(movies.rating) > 3
