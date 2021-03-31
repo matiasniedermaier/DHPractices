@@ -1,0 +1,33 @@
+<%- include('./../partials/header') %>
+
+<main>
+    <div class="container">
+        <h2 class="fs-1  my-4 mb-lg-6 text-light">Top 10 Actores</h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb fs-4">
+                <li class="breadcrumb-item"><a href="/" class="text-decoration-none text-danger">Inicio</a></li>
+                <li class="breadcrumb-item" aria-current="page"><a href="/actors" class="text-decoration-none text-danger">Actores</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Top 10</li>
+            </ol>
+        </nav>
+        <section class="mt-5">
+            <div class="row gy-1">
+                <% for( actor of actors ) { %>
+                    <div class="col-6 col-sm-3 col-lg-2">
+                        <article class="card bg-transparent border-0">
+                            <div class="position-relative">
+                                <img src="/images/actor-img.png" alt="Foto actor" class="card-img-top rounded image-movie" >
+                                <p class="position-absolute bottom-0 end-0 m-1 px-2 bg-danger rounded-pill text-light"><%= actor.rating %> <i class="fas fa-star text-light"></i></p>
+                            </div>
+                            <div class="card-body text-center px-0">
+                                <h5 class="card-title text-light"><%= actor.first_name %> <%= actor.last_name %> </p>
+                            </div>
+                        </article>
+                    </div>
+                <% } %>
+            </div>
+        </section>
+    </div>
+</main>
+
+<%- include('./../partials/footer') %>

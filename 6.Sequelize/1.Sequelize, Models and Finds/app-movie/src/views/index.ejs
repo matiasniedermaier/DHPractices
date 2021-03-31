@@ -1,0 +1,218 @@
+<%- include('./partials/header') %> 
+
+<main>
+    <div class="container">
+        <h1>Cinema Online</h1>
+        <div class="row">
+            <div class="col-12 col-md-7 col-lg-8">
+                <section class="mt-5">
+                    <div class="row gy-1">
+                        <h2 class="fs-1  mb-4 mb-lg-6 text-light">Películas Online</h2>
+                        <% for( movie of movies ) { %>
+                            <div class="col-6 col-sm-4 col-lg-3">
+                                <article class="card bg-transparent border-0">
+                                    <a href="/movies/detail/<%= movie.id %>" class="text-decoration-none">
+                                        <div class="position-relative">
+                                            <img src="/images/img-movie.jpg" alt="Foto película" class="card-img-top rounded image-movie" >
+                                            <p class="position-absolute top-0 end-0 px-1 bg-danger rounded text-light"><%= movie.release_date.getFullYear() %> </p>
+                                        </div>
+                                        <div class="card-body text-center px-0">
+                                            <h5 class="card-title text-light"><%= movie.title %> </p>
+                                        </div>
+                                    </a>
+                                </article>
+                            </div>
+                        <% } %>
+                    </div>
+                </section>
+                <section class="mt-5">
+                    <div class="row gy-1">
+                        <h2 class="fs-1 mb-4 mb-lg-6 text-light">Series Online</h2>
+                        <div class="col-6 col-sm-4 col-lg-3">
+                            <article class="card bg-transparent border-0">
+                                <a href="#" class="text-decoration-none">
+                                    <div class="position-relative">
+                                        <img src="/images/img-series.jpg" alt="Foto película" class="card-img-top rounded" >
+                                        <p class="position-absolute top-0 end-0 px-1 bg-danger rounded text-light">2021</p>
+                                    </div>
+                                    <div class="card-body text-center px-0">
+                                        <h5 class="card-title text-light">Serie Title</p>
+                                    </div>
+                                </a>
+                            </article>
+                        </div>
+                        <div class="col-6 col-sm-4 col-lg-3">
+                            <article class="card bg-transparent border-0">
+                                <a href="#" class="text-decoration-none">
+                                    <div class="position-relative">
+                                        <img src="/images/img-series.jpg" alt="Foto película" class="card-img-top rounded" >
+                                        <p class="position-absolute top-0 end-0 px-1 bg-danger rounded text-light">2021</p>
+                                    </div>
+                                    <div class="card-body text-center px-0">
+                                        <h5 class="card-title text-light">Serie Title</p>
+                                    </div>
+                                </a>
+                            </article>
+                        </div>
+                        <div class="col-6 col-sm-4 col-lg-3">
+                            <article class="card bg-transparent border-0">
+                                <a href="#" class="text-decoration-none">
+                                    <div class="position-relative">
+                                        <img src="/images/img-series.jpg" alt="Foto película" class="card-img-top rounded" >
+                                        <p class="position-absolute top-0 end-0 px-1 bg-danger rounded text-light">2021</p>
+                                    </div>
+                                    <div class="card-body text-center px-0">
+                                        <h5 class="card-title text-light">Serie Title</p>
+                                    </div>
+                                </a>
+                            </article>
+                        </div>
+                        <div class="col-6 col-sm-4 col-lg-3">
+                            <article class="card bg-transparent border-0">
+                                <a href="#" class="text-decoration-none">
+                                    <div class="position-relative">
+                                        <img src="/images/img-series.jpg" alt="Foto película" class="card-img-top rounded" >
+                                        <p class="position-absolute top-0 end-0 px-1 bg-danger rounded text-light">2021</p>
+                                    </div>
+                                    <div class="card-body text-center px-0">
+                                        <h5 class="card-title text-light">Serie Title</p>
+                                    </div>
+                                </a>
+                            </article>
+                        </div>
+                        <div class="col-6 col-sm-4 col-lg-3">
+                            <article class="card bg-transparent border-0">
+                                <a href="#" class="text-decoration-none">
+                                    <div class="position-relative">
+                                        <img src="/images/img-series.jpg" alt="Foto película" class="card-img-top rounded" >
+                                        <p class="position-absolute top-0 end-0 px-1 bg-danger rounded text-light">2021</p>
+                                    </div>
+                                    <div class="card-body text-center px-0">
+                                        <h5 class="card-title text-light">Serie Title</p>
+                                    </div>
+                                </a>
+                            </article>
+                        </div>
+                        <div class="col-6 col-sm-4 col-lg-3">
+                            <article class="card bg-transparent border-0">
+                                <a href="#" class="text-decoration-none">
+                                    <div class="position-relative">
+                                        <img src="/images/img-series.jpg" alt="Foto película" class="card-img-top rounded" >
+                                        <p class="position-absolute top-0 end-0 px-1 bg-danger rounded text-light">2021</p>
+                                    </div>
+                                    <div class="card-body text-center px-0">
+                                        <h5 class="card-title text-light">Serie Title</p>
+                                    </div>
+                                </a>
+                            </article>
+                        </div>
+                        <div class="col-6 col-sm-4 col-lg-3">
+                            <article class="card bg-transparent border-0">
+                                <a href="#" class="text-decoration-none">
+                                    <div class="position-relative">
+                                        <img src="/images/img-series.jpg" alt="Foto película" class="card-img-top rounded" >
+                                        <p class="position-absolute top-0 end-0 px-1 bg-danger rounded text-light">2021</p>
+                                    </div>
+                                    <div class="card-body text-center px-0">
+                                        <h5 class="card-title text-light">Serie Title</p>
+                                    </div>
+                                </a>
+                            </article>
+                        </div>
+                        <div class="col-6 col-sm-4 col-lg-3">
+                            <article class="card bg-transparent border-0">
+                                <a href="#" class="text-decoration-none">
+                                    <div class="position-relative">
+                                        <img src="/images/img-series.jpg" alt="Foto película" class="card-img-top rounded" >
+                                        <p class="position-absolute top-0 end-0 px-1 bg-danger rounded text-light">2021</p>
+                                    </div>
+                                    <div class="card-body text-center px-0">
+                                        <h5 class="card-title text-light">Serie Title</p>
+                                    </div>
+                                </a>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col-12 col-md-5 col-lg-4">
+                <section class="row gx-1 mt-5">
+                    <h5 class="movies-top text-danger text-center rounded p-2">TOP ESTRENOS</h5>
+                    <% for( movie of newMovies ) { %> 
+                        <div class="col-12 col-sm-6 col-md-12">
+                            <article class="card bg-transparent rounded border-0 my-3">
+                                <a href="/movies/detail/<%= movie.id %>" class="text-decoration-none">
+                                    <div class="row g-0">
+                                        <div class="col-5 col-md-5 col-lg-5 col-xl-4">
+                                            <img src="/images/img-top.jpg" alt="Foto película" class="img-fluid rounded">
+                                        </div>
+                                        <div class="col-7 col-md-7 col-lg-7 col-xl-8">
+                                            <div class="card-body text-light py-0">
+                                                <h5 class="card-title"><%= movie.title %> </h5>
+                                                <p class="card-text">
+                                                    <% for( let i = Math.trunc(movie.rating/2); i > 0; i-- ) { %>
+                                                        <i class="fas fa-star text-danger"></i>
+                                                    <% } %>
+                                                    <% for( let i = Math.trunc(movie.rating/2); i < 5; i++ ) { %>
+                                                        <i class="far fa-star text-danger"></i>
+                                                    <% } %>
+                                                </p>
+                                                <p class="card-text"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas, ducimus. Vel, autem.</p>
+                                                <p class="card-text"><small class="text-muted">
+                                                    <%= movie.release_date.getFullYear() %> -  
+                                                    <%= (movie.length/60).toFixed(0) %>h
+                                                    <% if( movie.length%60 > 0 ) { %> 
+                                                        <%= movie.length%60 %>m
+                                                    <% } %> 
+                                                </small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </article>
+                        </div>
+                    <% } %>
+                </section>
+                <section class="row gx-1 mt-5">
+                    <h5 class="movies-top text-danger text-center rounded p-2">PELICULAS DESTACADAS</h5>
+                    <% for( movie of topMovies ) { %> 
+                        <div class="col-12 col-sm-6 col-md-12">
+                            <article class="card bg-transparent rounded border-0 my-3">
+                                <a href="/movies/detail/<%= movie.id %>" class="text-decoration-none">
+                                    <div class="row g-0">
+                                        <div class="col-5 col-md-5 col-lg-5 col-xl-4">
+                                            <img src="/images/img-top.jpg" alt="Foto película" class="img-fluid rounded">
+                                        </div>
+                                        <div class="col-7 col-md-7 col-lg-7 col-xl-8">
+                                            <div class="card-body text-light py-0">
+                                                <h5 class="card-title"><%= movie.title %> </h5>
+                                                <p class="card-text">
+                                                    <% for( let i = Math.trunc(movie.rating/2); i > 0; i-- ) { %>
+                                                        <i class="fas fa-star text-danger"></i>
+                                                    <% } %>
+                                                    <% for( let i = Math.trunc(movie.rating/2); i < 5; i++ ) { %>
+                                                        <i class="far fa-star text-danger"></i>
+                                                    <% } %>
+                                                </p>
+                                                <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas, ducimus. Vel, autem.</p>
+                                                <p class="card-text"><small class="text-muted">
+                                                    <%= movie.release_date.getFullYear() %> -  
+                                                    <%= (movie.length/60).toFixed(0) %>h
+                                                    <% if( movie.length%60 > 0 ) { %> 
+                                                        <%= movie.length%60 %>m
+                                                    <% } %> 
+                                                </small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </article>
+                        </div>
+                    <% } %>
+                </section>
+            </div>
+        </div>
+    </div>
+</main>
+
+<%- include('./partials/footer') %>

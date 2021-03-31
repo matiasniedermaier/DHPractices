@@ -1,0 +1,85 @@
+<%- include('./../partials/header') %>
+
+<main>
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb fs-4 mt-4">
+                <li class="breadcrumb-item"><a href="/" class="text-decoration-none text-danger">Inicio</a></li>
+                <li class="breadcrumb-item"><a href="/movies" class="text-decoration-none text-danger">Películas</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><%= movie.title %></li>
+            </ol>
+        </nav>
+        <section class="card bg-transparent text-light border-0 my-5">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-lg-3 d-flex justify-content-center px-5 py-4 py-sm-0 px-sm-3">
+                    <img src="/images/img-movie.jpg" class="img-fluid rounded" alt="Imagen película">
+                </div>
+                <div class="col-12 col-sm-6 col-lg-9 d-flex align-items-start flex-column">
+                    <div class="mb-auto">
+                        <h2 class="card-title"><%= movie.title %></h2>
+                        <p class="card-text"><%= movie.rating / 2 %> / 5 
+                            <% for( let i = Math.trunc(movie.rating/2); i > 0; i-- ) { %>
+                                <i class="fas fa-star text-danger"></i>
+                            <% } %>
+                            <% for( let i = Math.trunc(movie.rating/2); i < 5; i++ ) { %>
+                                <i class="far fa-star text-danger"></i>
+                            <% } %>
+                        </p>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, unde id minima neque iure reiciendis sapiente veniam ad suscipit quisquam eligendi maxime quia placeat hic quae maiores reprehenderit voluptates esse. A enim impedit ducimus iusto obcaecati nobis voluptate dolore vitae.</p>
+                        <p class="card-text"><small class="text-muted">Duración: </small>
+                            <%= (movie.length/60).toFixed(0) %>h
+                            <% if( movie.length%60 > 0 ) { %> 
+                                <%= movie.length%60 %>m
+                            <% } %>
+                        </p>
+                        <p class="card-text"><small class="text-muted">Año: </small><%= movie.release_date.getFullYear() %></p>
+                        <p class="card-text"><small class="text-muted">Premios: </small><%= movie.awards %></p>
+                    </div>
+                    <div class="d-flex justify-content-between w-100">
+                        <button type="button" class="btn btn-light w-100 m-3 mb-0">MODIFICAR</button>
+                        <button type="button" class="btn btn-dark w-100 m-3 mb-0">BORRAR</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="row gx-1 mt-5">
+            <h5 class="movies-top text-danger text-center rounded p-2">PELICULAS DESTACADAS</h5>
+            <% for( movie of topMovies ) { %> 
+                <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                    <article class="card bg-transparent rounded border-0 my-3">
+                        <a href="/movies/detail/<%= movie.id %>" class="text-decoration-none">
+                            <div class="row g-0">
+                                <div class="col-5 col-md-5 col-lg-5 col-xl-4">
+                                    <img src="/images/img-top.jpg" alt="Foto película" class="img-fluid rounded">
+                                </div>
+                                <div class="col-7 col-md-7 col-lg-7 col-xl-8">
+                                    <div class="card-body text-light py-0">
+                                        <h5 class="card-title"><%= movie.title %> </h5>
+                                        <p class="card-text">
+                                            <% for( let i = Math.trunc(movie.rating/2); i > 0; i-- ) { %>
+                                                <i class="fas fa-star text-danger"></i>
+                                            <% } %>
+                                            <% for( let i = Math.trunc(movie.rating/2); i < 5; i++ ) { %>
+                                                <i class="far fa-star text-danger"></i>
+                                            <% } %>
+                                        </p>
+                                        <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas, ducimus. Vel, autem.</p>
+                                        <p class="card-text"><small class="text-muted">
+                                            <%= movie.release_date.getFullYear() %> -  
+                                            <%= (movie.length/60).toFixed(0) %>h
+                                            <% if( movie.length%60 > 0 ) { %> 
+                                                <%= movie.length%60 %>m
+                                            <% } %> 
+                                        </small></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                </div>
+            <% } %>
+        </section>
+    </div>
+</main>
+
+<%- include('./../partials/footer') %>

@@ -1,0 +1,66 @@
+<%- include('./head') %>
+
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="navbar-brand">
+                    <a href="/"><img src="/images/logo-app.png" alt="Logo" width="140px" height="55px"></a>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse d-lg-flex justify-content-between" id="navbarSupportedContent">
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link text-light fs-5" href="/">Inicio</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-light fs-5" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Películas</a>
+                            <ul class="dropdown-menu dropdown-menu-dark header-dropdown" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="/movies">Todas las películas</a></li>
+                                <li><a class="dropdown-item" href="/movies/new">Nuevas</a></li>
+                                <li><a class="dropdown-item" href="/movies/recommended">Recomendadas</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-light fs-5" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Series</a>
+                            <ul class="dropdown-menu dropdown-menu-dark header-dropdown" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Todos las series</a></li>
+                                <li><a class="dropdown-item" href="#">Nuevas</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-light fs-5" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Actores</a>
+                            <ul class="dropdown-menu dropdown-menu-dark header-dropdown" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="/actors">Todos los actores</a></li>
+                                <li><a class="dropdown-item" href="/actors/top">Top 10 del momento</a></li>
+                                <li><a class="dropdown-item" href="#">Películas recomendadas por actores</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-link">
+                            <form method="GET" action="/movies/search" class="d-flex">
+                                <div class="input-group form-search">
+                                    <input class="form-control bg-white border border-white" type="search" name="search" placeholder="Buscar Películas" aria-label="search" aria-describedby="basic-addon2">
+                                    <button class="btn btn-outline-light" type="submit" id="button-addon2"><i class="fas fa-search"></i></button>
+                                </div>
+                            </form>
+                        </li>
+                        <li class="nav-item my-lg-auto">
+                            <a class="nav-link text-light fs-5" href="#">Ingresar</a>
+                        </li>
+                        <li class="nav-item dropdown my-lg-auto">
+                            <a class="nav-link dropdown-toggle text-light fs-5" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">Perfil</a>
+                            <ul class="dropdown-menu dropdown-menu-dark me-lg-3 header-dropdown" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Mi Perfil</a></li>
+                                <li><a class="dropdown-item" href="#">Editar Perfil</a></li>
+                                <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
