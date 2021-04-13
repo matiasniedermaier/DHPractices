@@ -1,0 +1,35 @@
+<%- include('./../partials/header') %>
+
+<main>
+    <div class="container">
+        <h2 class="fs-1  my-4 mb-lg-6 text-light">Nuevas Películas</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb fs-4">
+                    <li class="breadcrumb-item"><a href="/" class="text-decoration-none text-danger">Inicio</a></li>
+                    <li class="breadcrumb-item"><a href="/movies" class="text-decoration-none text-danger">Películas</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Recomendadas</li>
+                </ol>
+            </nav>
+        <section class="mt-5">
+            <div class="row gy-1">
+                <% for( movie of movies ) { %>
+                    <div class="col-6 col-sm-3 col-lg-2">
+                        <article class="card bg-transparent border-0">
+                            <a href="/movies/detail/<%= movie.id %>" class="text-decoration-none">
+                                <div class="position-relative">
+                                    <img src="/images/img-movie.jpg" alt="Foto película" class="card-img-top rounded image-movie" >
+                                    <p class="position-absolute top-0 end-0 px-1 bg-danger rounded text-light"><%= movie.release_date.getFullYear() %> </p>
+                                </div>
+                                <div class="card-body text-center px-0">
+                                    <h5 class="card-title text-light"><%= movie.title %> </p>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+                <% } %>
+            </div>
+        </section>
+    </div>
+</main>
+
+<%- include('./../partials/footer') %>

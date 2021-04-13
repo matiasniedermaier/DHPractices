@@ -1,0 +1,22 @@
+<%- include('./../partials/header') %>
+
+<main>
+    <div class="container">
+        <h2 class="fs-1  my-4 mb-lg-6 text-light">Todos los Géneros</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb fs-4">
+                    <li class="breadcrumb-item"><a href="/" class="text-decoration-none text-danger">Inicio</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Géneros</li>
+                </ol>
+            </nav>
+        <section class="my-5">
+            <ul class="list-unstyled">
+                <% for( genre of genres ) { %>
+                    <a href="/movies/genres/<%= genre.id %>" class="text-decoration-none text-light fs-4"><li><%= genre.name %></li></a>    
+                <% } %>
+            </ul>
+        </section>
+    </div>
+</main>
+
+<%- include('./../partials/footer') %>

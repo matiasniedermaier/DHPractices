@@ -1,0 +1,32 @@
+<%- include('./../partials/header') %>
+
+<main>
+    <div class="container">
+        <h2 class="fs-1  my-4 mb-lg-6 text-light"><%= actor.first_name %> <%= actor.last_name %></h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb fs-4">
+                <li class="breadcrumb-item"><a href="/" class="text-decoration-none text-danger">Inicio</a></li>
+                <li class="breadcrumb-item" aria-current="page"><a href="/actors" class="text-decoration-none text-danger">Actores</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><%= actor.first_name %> <%= actor.last_name %></li>
+            </ol>
+        </nav>
+        <section class="my-5">
+            <div class="d-flex justify-content-center">
+                <article class="card bg-transparent border-0 text-center">
+                    <img src="/images/actor-img.png" alt="Foto actor" class="card-img-top rounded image-movie" >
+                    <div class="card-body text-center px-0">
+                        <h5 class="card-title text-light"><%= actor.first_name %> <%= actor.last_name %></p>
+                        <p class="card-text"><small class="text-muted">Rating: </small><%= actor.rating %></p>
+                        <p class="card-text"><small class="text-muted">Películas: </small><br>
+                            <% for( movie of actor.movies ) { %>
+                                <a href="/movies/detail/<%= movie.id %>" class="text-decoration-none text-light"><%= movie.title %></a><br>
+                            <% } %>
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </div>
+</main>
+
+<%- include('./../partials/footer') %>

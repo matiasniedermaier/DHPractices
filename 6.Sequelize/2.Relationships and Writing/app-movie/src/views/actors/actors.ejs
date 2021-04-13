@@ -1,0 +1,82 @@
+<%- include('./../partials/header') %>
+
+<main>
+    <div class="container">
+        <h2 class="fs-1  my-4 mb-lg-6 text-light">Top 10 Actores</h1>
+        <div class="d-flex justify-content-between">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb fs-4">
+                    <li class="breadcrumb-item"><a href="/" class="text-decoration-none text-danger">Inicio</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Actores</li>
+                </ol>
+            </nav>
+            <div class="dropdown">
+                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                    Ordenar
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                    <li><a class="dropdown-item" href="?order=first_name">Nombre</a></li>
+                    <li><a class="dropdown-item" href="?order=rating">Rating</a></li>
+                </ul>
+            </div>
+        </div>
+        <section class="mt-5">
+            <div class="row gy-1">
+                <% for( actor of actors ) { %>
+                    <div class="col-6 col-sm-3 col-lg-2">
+                        <a href="/actors/detail/<%= actor.id %>" class="text-decoration-none">
+                            <article class="card bg-transparent border-0">
+                                <div class="position-relative">
+                                    <img src="/images/actor-img.png" alt="Foto actor" class="card-img-top rounded image-movie" >
+                                    <p class="position-absolute bottom-0 end-0 m-1 px-2 bg-danger rounded-pill text-light"><%= actor.rating %> <i class="fas fa-star text-light"></i></p>
+                                </div>
+                                <div class="card-body text-center px-0">
+                                    <h5 class="card-title text-light"><%= actor.first_name %> <%= actor.last_name %> </p>
+                                </div>
+                            </article>
+                        </a>
+                    </div>
+                <% } %>
+            </div>
+        </section>
+        <nav aria-label="Page navigation">
+            <ul class="pagination d-flex justify-content-center fs-4">
+                <% if( page > 1 ) { %>
+                    <li class="page-item px-2">
+                        <a class="page-link bg-transparent text-danger border-0" href="/actors/<%= page - 1 %>" aria-label="Previous">
+                            <span aria-hidden="true">&laquo</span>
+                        </a>
+                    </li>
+                <% } else { %>
+                    <li class="page-item disabled px-2">
+                        <a class="page-link bg-transparent text-secondary border-0" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo</span>
+                        </a>
+                    </li>
+                <% } %>
+                <% for(let i = 1; i <= pages; i++ ) { %>
+                    <% if( i != page ) { %>
+                        <li class="page-item px-2"><a class="page-link bg-transparent   text-danger border-0" href="/actors/<%= i %>"><%= i %></a></li>
+                    <% } else { %>
+                        <li class="page-item disabled px-2"><a class="page-link bg-transparent text-secondary border-0" href="/actors/<%= i %>"><%= i %></a></li>
+                    <% } %> 
+                <% } %>
+                <% if( page != pages ) { %>
+                    <li class="page-item px-2">
+                        <a class="page-link bg-transparent text-danger border-0" href="/actors/<%= page + 1 %>" aria-label="Next">
+                            <span aria-hidden="true">&raquo</span>
+                        </a>
+                    </li>
+                <% } else if( page == undefined || page == pages ) { %>
+                    <li class="page-item disabled px-2">
+                        <a class="page-link bg-transparent text-secondary border-0" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo</span>
+                        </a>
+                    </li>
+                <% } %> 
+            </ul>
+        </nav>
+    </div>
+</main>
+
+<%- include('./../partials/footer') %>
