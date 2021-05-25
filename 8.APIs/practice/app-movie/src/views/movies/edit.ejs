@@ -1,0 +1,143 @@
+<%- include('./../partials/header') %>
+
+<main>
+    <div class="container">
+        <div class="row  d-flex justify-content-center">
+            <h2 class="col-12 fs-1  my-4 mb-lg-6 text-light text-center">Película Nueva</h2>
+            <div class="col-12 col-md-8 col-lg-6">
+                <% if( typeof errors == 'undefined' ) { %>
+                    <form action="/movies/edit/<%= movie.id %>?_method=PUT" method="POST" class="mb-4">
+                    <div class="form-floating my-3">
+                        <input type="text" name="title" class="form-control" id="floatingTitle" placeholder="Título" value="<%= movie.title %>">
+                        <label for="floatingTitle">Título</label>
+                    </div>
+                    <div class="form-floating my-3">
+                        <input type="number" name="length" class="form-control" id="floatingLength" placeholder="Duración" value="<%= movie.length %>">
+                        <label for="floatingLength">Duración</label>
+                    </div>
+                    <div class="form-floating my-3">
+                        <input type="number" name="rating" class="form-control" id="floatingRating" placeholder="Rating" value="<%= movie.rating %>">
+                        <label for="floatingRating">Rating</label>
+                        <div id="emailHelp" class="form-text">Tiene que ser un número del 1 al 10</div>
+                    </div>
+                    <select name="genre_id" class="form-select" aria-label="Default select example">
+                        <option>Género</option>
+                        <% for( let i = 0; i < genres.length; i++) { %>
+                            <% if( genres[i].id == movie.genre_id ) { %>
+                                <option selected value="<%= genres[i].id %>"><%= genres[i].name %></option>
+                            <% } %>
+                            <option value="<%= genres[i].id %>"><%= genres[i].name %></option>
+                        <% } %>
+                    </select>
+                    <div class="form-floating my-3">
+                        <input type="date" name="release_date" class="form-control" id="floatingRelease_date" placeholder="Fecha de Estreno" value="<%= movie.release_date %>">
+                        <label for="floatingRelease_date">Fecha de Estreno</label>
+                    </div>
+                    <div class="form-floating my-3">
+                        <input type="number" name="awards" class="form-control" id="floatingAwards" placeholder="Premios" value="<%= movie.awards %>">
+                        <label for="floatingAwards">Premios</label>
+                    </div>
+                    <div class="m-auto w-50 my-4">
+                        <button type="submit" class="btn btn-danger w-100">Guardar</button>
+                    </div>
+                    </form>
+                <% } else { %>
+                    <form action="/movies/edit/<%= movie.id %>?_method=PUT" method="POST" class="mb-4 needs-validation" novalidate>
+                        <% if( errors.title ) { %>
+                            <div class="form-floating my-3"> 
+                                <input type="text" name="title" class="form-control is-invalid" id="floatingTitle" placeholder="Título">
+                                <label for="floatingTitle">Título</label>
+                                <div class="invalid-feedback"><%= errors.title.msg %></div>
+                            </div>
+                        <% } else { %>
+                            <div class="form-floating my-3"> 
+                                <input type="text" name="title" value="<%= body.title %>" class="form-control is-valid" id="floatingTitle" placeholder="Título" required>
+                                <label for="floatingTitle">Título</label>
+                                <div class="valid-feedback">Genial!</div>
+                            </div>
+                        <% } %>
+                        <% if( errors.length ) { %>
+                            <div class="form-floating my-3"> 
+                                <input type="number" name="length" class="form-control is-invalid" id="floatingLength" placeholder="Duración">
+                                <label for="floatingLength">Duración</label>
+                                <div class="invalid-feedback"><%= errors.length.msg %></div>
+                            </div>
+                        <% } else { %>
+                            <div class="form-floating my-3"> 
+                                <input type="number" name="length" value="<%= body.length %>" class="form-control is-valid" id="floatingLength" placeholder="Duración" required>
+                                <label for="floatingLength">Duración</label>
+                                <div class="valid-feedback">Genial!</div>
+                            </div>
+                        <% } %>
+                        <% if( errors.rating ) { %>
+                            <div class="form-floating my-3"> 
+                                <input type="number" name="rating" class="form-control is-invalid" id="floatingRating" placeholder="Rating">
+                                <label for="floatingRating">Rating</label>
+                                <div class="invalid-feedback"><%= errors.rating.msg %></div>
+                                <div class="form-text">Tiene que ser un número del 0 al 10</div>
+                            </div>
+                        <% } else { %>
+                            <div class="form-floating my-3"> 
+                                <input type="number" name="rating" value="<%= body.rating %>" class="form-control is-valid" id="floatingRating" placeholder="Rating" required>
+                                <label for="floatingRating">Rating</label>
+                                <div class="valid-feedback">Genial!</div>
+                                <div class="form-text">Tiene que ser un número del 0 al 10</div>
+                            </div>
+                        <% } %>
+                        <% if( errors.genre_id ) { %>
+                            <select name="genre_id" class="form-select is-invalid">
+                                <option selected>Género</option>
+                                <% for( let genre of genres ) { %>
+                                    <option value="<%= genre.id %>"><%= genre.name %></option>
+                                <% } %>
+                            </select>
+                            <div class="invalid-feedback"><%= errors.genre_id.msg %></div>
+                        <% } else { %>
+                            <select name="genre_id" class="form-select is-valid" aria-label="Default select example" required>
+                                <option>Género</option>
+                                <% for( let genre of genres ) { %>
+                                    <% if( genre.name == body.genre_id ) { %>
+                                        <option value="<%= genre.id %>" selected><%= genre.name %></option>
+                                    <% } %>
+                                    <option value="<%= genre.id %>"><%= genre.name %></option>
+                                <% } %>
+                            </select>
+                            <div class="valid-feedback">Genial!</div>
+                        <% } %>
+                        <% if( errors.release_date ) { %>
+                            <div class="form-floating my-3"> 
+                                <input type="date" name="release_date" class="form-control is-invalid" id="floatingRelease_date" placeholder="Fecha de Estreno">
+                                <label for="floatingRelease_date">Fecha de Estreno</label>
+                                <div class="invalid-feedback"><%= errors.release_date.msg %></div>
+                            </div>
+                        <% } else { %>
+                            <div class="form-floating my-3"> 
+                                <input type="date" name="release_date" value="<%= body.release_date %>" class="form-control is-valid" id="floatingRelease_date" placeholder="Fecha de Estreno" required>
+                                <label for="floatingRelease_date">Fecha de Estreno</label>
+                            </div>
+                            <div class="valid-feedback">Genial!</div>
+                        <% } %>
+                        <% if( errors.awards ) { %>
+                            <div class="form-floating my-3"> 
+                                <input type="number" name="awards" class="form-control is-invalid" id="floatingAwards" placeholder="Premios">
+                                <label for="floatingAwards">Premios</label>
+                                <div class="invalid-feedback"><%= errors.awards.msg %></div>
+                            </div>
+                        <% } else { %>
+                            <div class="form-floating my-3"> 
+                                <input type="number" name="awards" value="<%= body.awards %>" class="form-control is-valid" id="floatingAwards" placeholder="Premios" required>
+                                <label for="floatingAwards">Premios</label>
+                            </div>
+                            <div class="valid-feedback">Genial!</div>
+                        <% } %>
+                        <div class="m-auto w-50 my-4">
+                            <button type="submit" class="btn btn-danger w-100">Guardar</button>
+                        </div>
+                    </form>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</main>
+
+<%- include('./../partials/footer') %>
