@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./src/bin/www"
+    "start": "0x ./src/bin/www",
+    "test": "node ./src/autocannon.js"
   },
   "dependencies": {
     "bootstrap": "^5.0.0-beta2",
